@@ -53,34 +53,54 @@ class EditorPage extends Component {
   handleTagsOnChange(event) {
     this.setState({ tags: event.target.value });
   }
+
   render() {
+    const editorStyle = {
+      height: '400px',
+    };
     return (
-      <div>
-        <div >
-          <button
-            type="submit"
-            onClick={() => this.handleSubmit()}
-          >Submit</button>
-          <button type="submit"><Link to="/">Cancel</Link></button>
-        </div>
-        <div>
-          <input
-            type="text"
-            value={this.state.title}
-            onChange={this.handleTitleOnChange}
-            placeholder="New Title"
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            value={this.state.tags}
-            onChange={this.handleTagsOnChange}
-            placeholder="add tags here"
-          />
-        </div>
-        <div>
-          <ReactQuill theme="snow" value={this.state.text} onChange={this.handleTextOnChange} />
+      <div className="container">
+        <div className="row">
+          <div className="col s12">
+            <div className="fixed-action-btn vertical">
+              <a className="btn-floating btn-large pink darken-3">
+                <i className="material-icons">menu</i>
+              </a>
+              <ul>
+                <li>
+                  <button
+                    className="btn-floating pink accent-1"
+                    type="submit"
+                    onClick={() => this.handleSubmit()}
+                  >
+                    <i className="material-icons">done</i>
+                  </button>
+                </li>
+                <li><Link className="btn-floating pink accent-1" to="/">
+                  <i className="material-icons">cancel</i>
+                </Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="col s12">
+            <input
+              type="text"
+              value={this.state.title}
+              onChange={this.handleTitleOnChange}
+              placeholder="New Title"
+            />
+          </div>
+          <div className="col s12">
+            <input
+              type="text"
+              value={this.state.tags}
+              onChange={this.handleTagsOnChange}
+              placeholder="add tags here"
+            />
+          </div>
+          <div className="col s12" style={editorStyle}>
+            <ReactQuill theme="snow" value={this.state.text} onChange={this.handleTextOnChange} />
+          </div>
         </div>
       </div>
     );

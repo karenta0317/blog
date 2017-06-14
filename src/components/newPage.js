@@ -46,6 +46,9 @@ class NewPage extends Component {
     this.setState({ tags: event.target.value });
   }
   render() {
+    const editorStyle = {
+      height: '400px',
+    };
     return (
       <div className="container">
         <div className="row">
@@ -86,7 +89,7 @@ class NewPage extends Component {
               placeholder="add tags here"
             />
           </div>
-          <div className="col s12">
+          <div style={editorStyle} className="col s12">
             <ReactQuill theme="snow" value={this.state.text} onChange={this.handleTextOnChange} />
           </div>
         </div>

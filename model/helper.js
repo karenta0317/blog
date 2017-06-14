@@ -19,7 +19,8 @@ const initialize = () => {
     });
   });
 
-  mongoose.connect('mongodb://localhost/blog_data');
+
+  mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/blog_data');
 };
 
 module.exports = initialize();
