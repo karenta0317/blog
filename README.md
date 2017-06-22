@@ -5,7 +5,7 @@
 [**DEMO link**](https://fast-brook-90410.herokuapp.com/)
 
 ## Reauirement
-**MongoDB **
+**MongoDB**
 The database is built in mLab, you can sign up one acount for the mLab and create the database or rewrite the code in model/heplper.js to crate a local one.
 
 
